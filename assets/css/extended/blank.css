@@ -89,3 +89,17 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 .toc li a:hover {
     color: var(--secondary);
 }
+
+/* 修改 全局字体/代码字体  */
+/* 参考链接: https://kyxie.github.io/zh/blog/tech/papermod/#%e4%bf%ae%e6%94%b9%e5%85%a8%e5%b1%80%e5%ad%97%e4%bd%93 */
+body {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.post-content pre, code {
+    font-family: 'JetBrains Mono', sans-serif;
+    max-height: 60rem;
+}
