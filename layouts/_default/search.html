@@ -26,4 +26,23 @@
     <ul id="searchResults" aria-label="search results"></ul>
 </div>
 
+<!-- PaperMod 搜索页展示标签列表 tag -->
+<!-- 参考链接: https://loyayz.com/website/220610-hugo-papermodx-series-in-search-page.md/ -->
+{{- if not (.Param "hideTags") }}
+{{- $taxonomies := .Site.Taxonomies.tags }}
+{{- if gt (len $taxonomies) 0 }}
+<h2 style="margin-top: 32px">{{- (.Param "tagsTitle") | default "tags" }}</h2>
+<ul class="terms-tags">
+    {{- range $name, $value := $taxonomies }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/tags/%s" $name) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+{{- end }}
+{{- end }}
+
 {{- end }}{{/* end main */}}
